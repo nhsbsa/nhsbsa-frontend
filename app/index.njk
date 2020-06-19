@@ -1,0 +1,55 @@
+{% set title = 'Home' %}
+{% from 'components/contents-list/macro.njk' import contentsList %}
+{% from 'components/footer/macro.njk' import footer %}
+{% from 'components/hero/macro.njk' import hero %}
+{% from 'components/promo/macro.njk' import promo %}
+
+{% extends 'page.njk' %}
+
+{% block header %}
+  {{ super() }}
+
+  {{ hero({
+    "heading": "NHS.UK (NHSBSA) frontend",
+    "text": "Code you need to start building accessible user interfaces for NHS websites and services."
+  }) }}
+{% endblock %}
+
+{% block fullWidthContent %}
+
+  <div class="nhsuk-grid-row nhsuk-promo-group">
+    <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+      {{ promo({
+        "href": "./pages/install.html",
+        "heading": "Install",
+        "headingLevel": "2",
+        "description": "Download and installation instructions."
+      }) }}
+    </div>
+    <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+      {{ promo({
+        "href": "./pages/examples.html",
+        "heading": "Examples",
+        "headingLevel": "2",
+        "description": "Page layouts, test pages and components."
+      }) }}
+    </div>
+    <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+      {{ promo({
+        "href": "./pages/about.html",
+        "heading": "About",
+        "headingLevel": "2",
+        "description": "Getting support and contributing."
+      }) }}
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="nhsuk-u-reading-width">
+
+    <p class="nhsuk-u-margin-bottom-0">Visit the <a href="https://service-manual.nhs.uk/">NHS digital service manual</a> for guidance and examples.</p>
+
+  </div>
+
+{% endblock %}

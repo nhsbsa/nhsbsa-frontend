@@ -1,0 +1,76 @@
+{
+  "name": "nhsbsa-frontend",
+  "version": "0.1.0",
+  "description": "NHSBSA frontend contains the code you need to start building user interfaces for NHSBSA websites and services.",
+  "scripts": {
+    "prepare": "gulp bundle",
+    "build": "gulp build",
+    "start": "gulp",
+    "test": "npm run lint && echo 'testing disabled until source is added'",
+    "lint": "echo 'linting disabled until source is added'",
+    "lint:js": "eslint -c ./tests/linters/.eslintrc.js packages/components/**/*.js",
+    "lint:css": "sass-lint -c ./tests/linters/.sass-lint.yml 'packages/**/*.scss' -v -q",
+    "lint:html": "htmlhint --config ./tests/linters/.htmlhintrc ./dist/app/components/**/*.html",
+    "backstop:ref": "backstop --config=tests/backstop/backstop.js reference --docker",
+    "backstop:test": "backstop --config=tests/backstop/backstop.js test --docker",
+    "backstop:approve": "backstop --config=tests/backstop/backstop.js approve",
+    "backstop:clean": "rm -rf tests/backstop/bitmaps_test/*",
+    "build-gh-pages": "gulp bundle && BASE_URL='/nhsbsa-frontend' gulp docs:build",
+    "serve-gh-pages": "gulp bundle && gulp docs:serve",
+    "build-gh-release": "gulp zip",
+    "jest:dev": "jest --watch",
+    "jest:ci": "jest --passWithNoTests"
+  },
+  "dependencies": {
+    "nhsuk-frontend": "^3.1.0",
+    "accessible-autocomplete": "^2.0.2",
+    "sass-mq": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "backstopjs": "^4.5.0",
+    "eslint": "^6.8.0",
+    "eslint-config-nhsuk": "^1.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-nunjucks": "^5.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.0.1",
+    "htmlhint": "^0.11.0",
+    "husky": "^3.1.0",
+    "jest": "^25.2.7",
+    "minimist": "^1.2.5",
+    "node-sass": "^4.13.1",
+    "nunjucks": "^3.2.1",
+    "sass-lint": "^1.13.1",
+    "webpack-stream": "^5.2.1"
+  },
+  "eslintConfig": {
+    "extends": "./tests/linters/.eslintrc.js"
+  },
+  "sasslintConfig": "./tests/linters/.sass-lint.yml",
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
+  },
+  "files": [
+    "dist",
+    "packages"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhsbsa/nhsbsa-frontend.git"
+  },
+  "homepage": "https://nhsbsa.github.io/nhsbsa-frontend/",
+  "bugs": {
+    "url": "https://github.com/nhsbsa/nhsbsa-frontend/issues"
+  },
+  "license": "MIT"
+}

@@ -1,12 +1,12 @@
-# NHS.UK frontend
+# NHS.UK (NHSBSA) frontend
 
-NHS.UK frontend contains the code you need to start building user interfaces for NHS websites and services.
+NHS.UK (NHSBSA) frontend contains the code you need to start building user interfaces for NHSBSA websites and services.
 
 ## Guidance
 
-Visit the [NHS digital service manual](https://service-manual.nhs.uk/) for examples of components and guidance for when to use them. If we haven’t yet published guidance on the component you want, please [email us](mailto:service-manual@nhs.net) or get in touch on the [NHS digital service manual Slack workspace](https://join.slack.com/t/nhs-service-manual/shared_invite/enQtNTIyOTEyNjU3NDkyLTk4NDQ3YzkwYzk1Njk5YjAxYTI5YTVkZmUxMGQ0ZjA3NjMyM2ZkNjBlMWMxODVjZjYzNzg1ZmU4MWY1NmE2YzE).
+Visit the [NHS digital service manual](https://service-manual.nhs.uk/) for examples of components and guidance for when to use them. 
 
-## How to install NHS.UK frontend
+## How to install NHS.UK (NHSBSA) frontend
 
 ### 1. Install with package managers
 
@@ -22,7 +22,7 @@ Visit our [support for browsers and assistive technology](/docs/contributing/bro
 
 ## Contribute
 
-Read our [contributing guidelines](CONTRIBUTING.md) to contribute to NHSBSA frontend.
+Read our [contributing guidelines](CONTRIBUTING.md) to contribute to NHS.UK (NHSBSA) frontend.
 
 We created this library with help from:
 
@@ -31,7 +31,7 @@ We created this library with help from:
 
 ## Get in touch
 
-NHS.UK frontend is maintained by NHS Digital. [Email us](mailto:service-manual@nhs.net), open a [GitHub issue](https://github.com/nhsbsa/nhsbsa-frontend/issues/new) or get in touch on the [NHS digital service manual Slack workspace](https://join.slack.com/t/nhs-service-manual/shared_invite/enQtNTIyOTEyNjU3NDkyLTk4NDQ3YzkwYzk1Njk5YjAxYTI5YTVkZmUxMGQ0ZjA3NjMyM2ZkNjBlMWMxODVjZjYzNzg1ZmU4MWY1NmE2YzE).
+NHS.UK (NHSBSA) frontend is maintained by NHSBSA. open a [GitHub issue](https://github.com/nhsbsa/nhsbsa-frontend/issues/new).
 
 ## Licence
 
