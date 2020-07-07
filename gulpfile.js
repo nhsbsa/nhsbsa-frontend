@@ -111,7 +111,7 @@ function versionJS() {
  * Copy assets such as icons and images into the distribution
  */
 function assets() {
-  return gulp.src('packages/assets/**')
+  return gulp.src(['packages/assets/**', 'node_modules/nhsuk-frontend/packages/assets/**'])
     .pipe(gulp.dest('dist/assets/'))
 }
 
@@ -140,6 +140,16 @@ function createZip() {
     .pipe(gulp.dest('dist'))
 }
 
+function createWebjar() {
+  return gulp.src(['dist/css/*.min.css', 'dist/js/*.min.js', 'dist/assets/**', '!dist/js/nhsbsa.min.js'], { base: 'dist' })
+  .pipe(rename(function(path) {
+    path.dirname = `META-INF/resources/webjars/nhsbsa-frontend/${package.version}/`  + path.dirname
+  }))
+  .pipe(zip(`nhsbsa-frontend-${package.version}.jar`))
+  .pipe(gulp.dest('dist'))
+} 
+
+
 /**
  * Development tasks
  */
@@ -155,20 +165,22 @@ gulp.task('build', gulp.series([
   compileCSS,
   webpackJS,
 ]));
+gulp.task('zip', gulp.series([
+  assets,
+  jsFolder,
+  cssFolder,
+  createZip,
+  createWebjar
+]));
 gulp.task('bundle', gulp.series([
   cleanDist,
   'build',
   minifyCSS,
   minifyJS,
   versionJS,
+  'zip'
 ]))
-gulp.task('zip', gulp.series([
-  'bundle',
-  assets,
-  jsFolder,
-  cssFolder,
-  createZip
-]));
+
 gulp.task('watch', watch);
 
 
