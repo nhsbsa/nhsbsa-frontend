@@ -54,7 +54,9 @@ jobs:
         edge: true
         token: $GITHUB_TOKEN
         file_glob: true
-        file: ./dist/nhsbsa-frontend-*.zip
+        file: 
+          - ./dist/nhsbsa-frontend-*.zip
+          - ./dist/nhsbsa-frontend-*.jar
         skip_cleanup: true
         on:
           tags: true

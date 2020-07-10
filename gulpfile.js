@@ -165,21 +165,21 @@ gulp.task('build', gulp.series([
   compileCSS,
   webpackJS,
 ]));
-gulp.task('zip', gulp.series([
-  assets,
-  jsFolder,
-  cssFolder,
-  createZip,
-  createWebjar
-]));
 gulp.task('bundle', gulp.series([
   cleanDist,
   'build',
   minifyCSS,
   minifyJS,
   versionJS,
-  'zip'
-]))
+]));
+gulp.task('zip', gulp.series([
+  'bundle',
+  assets,
+  jsFolder,
+  cssFolder,
+  createZip,
+  createWebjar
+]));
 
 gulp.task('watch', watch);
 
