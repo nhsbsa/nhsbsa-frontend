@@ -23,13 +23,13 @@
   },
   "dependencies": {
     "accessible-autocomplete": "^2.0.3",
-    "nhsuk-frontend": "^4.0.0",
+    "nhsuk-frontend": "^4.1.0",
     "sass-mq": "^5.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "babel-loader": "^8.2.1",
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
     "backstopjs": "^4.5.0",
     "eslint": "^6.8.0",
     "eslint-config-nhsuk": "^1.0.0",
@@ -41,13 +41,13 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-zip": "^5.0.2",
+    "gulp-zip": "^5.1.0",
     "htmlhint": "^0.11.0",
     "husky": "^3.1.0",
     "jest": "^25.5.4",
     "minimist": "^1.2.5",
     "node-sass": "^4.14.1",
-    "nunjucks": "^3.2.2",
+    "nunjucks": "^3.2.3",
     "sass-lint": "^1.13.1",
     "webpack-stream": "^5.2.1"
   },
